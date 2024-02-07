@@ -1,28 +1,41 @@
-import { Layout, Menu, MenuProps } from 'antd';
+import { Layout, Menu, MenuProps } from "antd";
+import { NavLink, Outlet } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-
-const items:MenuProps["items"] = [
+const items: MenuProps["items"] = [
   {
-    key:1,
-    label:"Dashboards"
+    key: 1,
+    label: <NavLink to={'/admin'}>Dashboards</NavLink>,
   },
   {
-    key:2,
-    label:"Profile"
+    key: "User Management",
+    label: "User Management",
+    children: [
+      {
+        key: "Create Admin",
+        label: <NavLink to={'/admin/create-admin'}>Create Admin</NavLink>,
+      },
+      {
+        key: "Create Faculty",
+        label:  <NavLink to={'/admin/create-faculty'}>Create Faculty</NavLink>,
+        
+      },
+      {
+        key: "Create Student",
+        label: <NavLink to={'/admin/create-student'}>Create Student</NavLink>,
+      },
+    ],
   },
-  {
-    key:3,
-    label:"Menu"
-  },
-]
+];
 
 const MainLayout = () => {
   return (
-    <Layout style={{
-      height:'100vh'
-    }}>
+    <Layout
+      style={{
+        height: "100vh",
+      }}
+    >
       <Sider
         breakpoint="lg"
         collapsedWidth="0"
@@ -33,8 +46,8 @@ const MainLayout = () => {
           console.log(collapsed, type);
         }}
       >
-        <div className="demo-logo-vertical" >
-          <h1 className='text-white text-2xl font-bold p-2'>HM Academy</h1>
+        <div className="demo-logo-vertical">
+          <h1 className="text-white text-2xl font-bold p-2">HM Academy</h1>
         </div>
         <Menu
           theme="dark"
@@ -51,7 +64,7 @@ const MainLayout = () => {
               padding: 24,
             }}
           >
-            content
+            <Outlet></Outlet>
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>
