@@ -13,7 +13,13 @@ export type TUserRoute = {
 };
 
 export type TSidebarItem = {
-    key: string;
-    label: ReactNode;
-    children?: TSidebarItem[];
-  };
+  key: string;
+  label: ReactNode;
+  children?: TSidebarItem[];
+};
+
+export type TUserRole = {
+  ADMIN: string;
+  FACULTY: string;
+  STUDENT: string;
+};
