@@ -13,6 +13,26 @@ const router = createBrowserRouter([
     element: <App></App>,
     children: routeGenerator(adminPaths)
   },
+  {
+    path: "/faculty",
+    element: <App></App>,
+    children: routeGenerator(adminPaths)
+  },
+  {
+    path: "/student",
+    element: <App></App>,
+    children: routeGenerator(adminPaths)
+  },
+  {
+    path: "/login",
+    element: <App></App>,
+    children: routeGenerator(adminPaths)
+  },
+  {
+    path: "/register",
+    element: <App></App>,
+    children: routeGenerator(adminPaths)
+  },
 ]);
 
 export default router;
