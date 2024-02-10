@@ -1,9 +1,9 @@
-import { Layout, Menu } from "antd";
+import { Layout } from "antd";
 import { Outlet } from "react-router-dom";
-import { adminPaths } from "../../routes/admin.route";
-import sidebarItemsGenerator from "../../utils/sidebarItemsGenerator";
+import Sidebar from "./Sidebar";
 
-const { Header, Content, Footer, Sider } = Layout;
+
+const { Header, Content, Footer } = Layout;
 
 
 
@@ -14,26 +14,8 @@ const MainLayout = () => {
         height: "100vh",
       }}
     >
-      <Sider
-        breakpoint="lg"
-        collapsedWidth="0"
-        onBreakpoint={(broken) => {
-          console.log(broken);
-        }}
-        onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
-        }}
-      >
-        <div className="demo-logo-vertical">
-          <h1 className="text-white text-2xl font-bold p-2">HM Academy</h1>
-        </div>
-        <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={["4"]}
-          items={sidebarItemsGenerator(adminPaths)}
-        />
-      </Sider>
+    {/* Side bar  */}
+    <Sidebar></Sidebar>
       <Layout>
         <Header style={{ padding: 0 }} />
         <Content style={{ margin: "24px 16px 0" }}>
