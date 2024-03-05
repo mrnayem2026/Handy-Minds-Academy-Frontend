@@ -13,7 +13,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <PersistGate loading={null} persistor={persistor}>
         <RouterProvider router={router}></RouterProvider>
       </PersistGate>
-
     </Provider>
   </React.StrictMode>,
 )
