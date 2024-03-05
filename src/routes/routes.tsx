@@ -4,6 +4,8 @@ import { studentPath } from "./student.route";
 import { facultyPaths } from "./faculty.route";
 import { createBrowserRouter } from "react-router-dom";
 import { routeGenerator } from "../utils/routesGenerator";
+import LoginPage from "../pages/Login";
+import RegisterPage from "../pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -27,13 +29,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <App></App>,
-    children: routeGenerator(adminPaths)
+    element:<LoginPage></LoginPage>,
   },
   {
     path: "/register",
-    element: <App></App>,
-    children: routeGenerator(adminPaths)
+    element: <RegisterPage></RegisterPage>,
   },
 ]);
 
